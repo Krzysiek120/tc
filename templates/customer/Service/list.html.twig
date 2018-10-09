@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title_body %}
+    <i class="fas fa-table"></i> Lista usług
+{% endblock %}
+
+{% block body %}
+    <table class="table table-hover">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Usługa</th>
+            <th>Dotyczy</th>
+            <th>Kwota</th>
+            <th>Ważność</th>
+            <th>Status</th>
+            <th>Akcja</th>
+        </tr>
+        </thead>
+        <tbody>
+            {% for service in services %}
+            <tr>
+                <th scope="row">1</th>
+                <td>{{ service.service.name }}</td>
+                <td>{{ service.name }}</td>
+                <td>{{ service.amount }} PLN</td>
+                <td>{{ service.validityDate | date('Y-m-d') }}</td>
+                <td>
+                    {% if service.active == false %}
+                        <button type="button" class="btn btn-danger disabled">Nieaktywne</button>
+                    {% else %}
+                        <button type="button" class="btn btn-success disabled">Aktywne</button>
+                    {% endif %}
+                </td>
+                <td>
+                    <form action="/payment/new/" method="post">
+                        <input type="hidden" name="id" value="{{ service.id }}">
+                        <input type="submit" value="Zapłać" class="btn btn-success">
+                    </form>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

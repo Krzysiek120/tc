@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title_body %}
+    <i class="fas fa-table"></i> Dane do faktury
+{% endblock %}
+
+{% block body %}
+    {{ include('customer/BillingData/_form.html.twig', {'button_label': 'Zapisz'}) }}
+{% endblock %}

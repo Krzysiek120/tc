@@ -1,0 +1,25 @@
+dashboard_customer:
+    path: /
+    controller: App\Controller\Customer\DashboardController::index
+
+service_customer:
+    path: /service/
+    controller: App\Controller\Customer\ServiceController::index
+
+billing_data_customer:
+    path: /billing/data/
+    controller: App\Controller\Customer\BillingDataController::index
+    methods:    [GET, POST]
+
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+payu_admin:
+    path: /admin/payu/
+    controller: App\Controller\Admin\PayUController::index
+    methods:    [GET]
+
+payment_customer:
+    path: /payment/new/
+    controller: App\Controller\Customer\PaymentController::new
+    methods:    [POST]
