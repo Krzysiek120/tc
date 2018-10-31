@@ -23,3 +23,8 @@ payment_customer:
     path: /payment/new/
     controller: App\Controller\Customer\PaymentController::new
     methods:    [POST]
+
+helpdesk_add:
+    path: /helpdesk/add/
+    controller: App\Controller\HelpdeskController::index
+    methods:    [GET]
