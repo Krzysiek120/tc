@@ -25,6 +25,6 @@ payment_customer:
     methods:    [POST]
 
 helpdesk_add:
-    path: /helpdesk/add/
+    path: /helpdesk/
     controller: App\Controller\HelpdeskController::index
     methods:    [GET]

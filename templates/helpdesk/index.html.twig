@@ -1,9 +1,13 @@
 {% extends 'base.html.twig' %}
 
 {% block title_body %}
-    <i class="fas fa-table"></i> Lista usług
+
+    {{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}
+
 {% endblock %}
 
 {% block body %}
-    <h1>Test</h1>
+
 {% endblock %}
